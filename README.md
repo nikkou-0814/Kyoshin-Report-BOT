@@ -1,4 +1,6 @@
 # Kyoshin Report BOT
+> [!WARNING]
+> プログラミング弱者が作ったコードなのでエラーが発生する可能性があります。
 
 ## 環境構築
 
@@ -25,14 +27,31 @@ Discord BOT のトークンとチャンネルIDを記載します。
 
 2. TOKEN=<DISOCRD_TOKEN>
 
-3. channelid=<DISCORD_ChannelID>
+3. ChannelID=<DISCORD_ChannelID>
 
 ## 依存関係のインストールと起動
 
-依存関係の管理は Poetry を使用しています。
-
 ```bash
-poetry env use <which python>
-poetry install
-poetry run python app.py
+pip install -r requirements.txt
+
+python app.py
 ```
+
+## KyoshinEewViewer for ingenをインストール
+
+### <a href="https://svs.ingen084.net/kyoshineewviewer/">こちらからダウンロード</a>
+
+### ワークフローの設定
+
+設定 → ワークフロー → 新規追加 →
+
+トリガー → ```(強振モニタ)揺れ検知```
+
+アクション → ```指定したURLに内容をPOST```
+
+URL → ```http://localhost:8000/endpoint```
+
+
+## 謝礼
+
+### KyoshinEewViewer for ingen (ingen様)

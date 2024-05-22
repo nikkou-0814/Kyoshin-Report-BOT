@@ -38,12 +38,14 @@ async def create_embed(post_data):
     )
 
     intensity = post_data_dict["Level"]
-    if intensity == "medium":
-        intensity_text = "中"
-        embed.color = discord.Color.orange()
-    elif intensity == "strong":
+    if intensity == "strong":
         intensity_text = "強"
         embed.color = discord.Color.red()
+
+    elif intensity == "medium":
+        intensity_text = "中"
+        embed.color = discord.Color.orange()
+        
     elif intensity == "weak":
         intensity_text = "弱"
         embed.color = discord.Color.blue()
