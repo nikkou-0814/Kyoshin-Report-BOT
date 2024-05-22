@@ -7,16 +7,17 @@ import threading
 import logging
 import json
 import datetime
+from dotenv import load_dotenv
+import os
 
 intents = discord.Intents.default()
 intents.message_content = True
 client = discord.Client(intents=intents)
 
-TOKEN = 'BOTTOKEN'
-channelid = 'ChannelID'
+load_dotenv()
 
 async def send_to_discord(embed):
-    channel = client.get_channel(channelid)
+    channel = client.get_channel(os.getenv('ChannelID'))
     if channel is not None:
         await channel.send(embed=embed)
     else:
@@ -65,7 +66,7 @@ async def start_server():
     await site.start()
 
 async def run_bot():
-    await client.start(TOKEN)
+    await client.start(os.getenv('TOKEN'))
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
