@@ -39,7 +39,7 @@ python app.py
 
 ## KyoshinEewViewer for ingenをインストール
 
-### <a href="https://svs.ingen084.net/kyoshineewviewer/">こちらからダウンロード</a>
+### <a href="https://github.com/ingen084/KyoshinEewViewerIngen">こちらからダウンロード</a>
 
 ### ワークフローの設定
 
