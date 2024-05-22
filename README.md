@@ -1,7 +1,13 @@
 # Kyoshin Report BOT
+
+<div style="text-align: center;">
+    <img src="screenshot.png" alt="Kyoshin Report BOT Screenshot" style="max-width: 100%; height: auto;">
+</div>
+
 > [!WARNING]
+>## 始める前に
 > プログラミング弱者が作ったコードなのでエラーが発生する可能性があります。
-> 環境によっては起動できない可能性があります
+> 環境によっては起動できない可能性があります。
 
 ## 環境構築
 
