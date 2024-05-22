@@ -16,8 +16,10 @@ client = discord.Client(intents=intents)
 
 load_dotenv()
 
+channel_id = int(os.getenv('ChannelID'))
+
 async def send_to_discord(embed):
-    channel = client.get_channel(os.getenv('ChannelID'))
+    channel = client.get_channel(channel_id)
     if channel is not None:
         await channel.send(embed=embed)
     else:
@@ -45,7 +47,7 @@ async def create_embed(post_data):
     elif intensity == "medium":
         intensity_text = "中"
         embed.color = discord.Color.orange()
-        
+
     elif intensity == "weak":
         intensity_text = "弱"
         embed.color = discord.Color.blue()
