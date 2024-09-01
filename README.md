@@ -101,4 +101,4 @@ URL → ```http://localhost:8000/endpoint```※ローカルの場合
 ## 謝礼
 
 ### KyoshinEewViewer for ingen (ingen様)
-### 強振モニタ (防災科学技術研究所 様)
+### 強振モニタ (防災科学技術研究所様)

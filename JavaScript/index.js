@@ -80,7 +80,7 @@ async function createEmbed(postData) {
         { name: '検知地域', value: postData.Regions.join(', '), inline: true }
     );
     
-    embed.setFooter({ text: `イベントID: ${postData.EventId}\n検知ID: ${postData.KyoshinEventId}`, iconURL: client.user.displayAvatarURL() });
+    embed.setFooter({ text: `イベントID: ${postData.EventId}\n検知ID: ${postData.KyoshinEventId}` });
 
     return { embeds: [embed]};
 }

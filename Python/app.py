@@ -66,7 +66,7 @@ async def create_embed(post_data):
     embed.add_field(name="検知日時", value=formatted_evented_at, inline=True)
     embed.add_field(name="震度", value=intensity_text, inline=True)
     embed.add_field(name="検知地域", value=", ".join(post_data_dict["Regions"]), inline=True)
-    embed.set_footer(text=f"イベントID: {post_data_dict['EventId']}\n検知ID: {post_data_dict["KyoshinEventId"]}", icon_url=f"{client.user.avatar}")
+    embed.set_footer(text=f"イベントID: {post_data_dict['EventId']}\n検知ID: {post_data_dict["KyoshinEventId"]}")
     await send_to_discord(embed)
 
 async def start_server():
