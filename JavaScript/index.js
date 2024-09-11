@@ -1,4 +1,4 @@
-const { Client, GatewayIntentBits, EmbedBuilder } = require('discord.js');
+const { Client, GatewayIntentBits, EmbedBuilder, ActivityType } = require('discord.js');
 const express = require('express');
 const dotenv = require('dotenv');
 
@@ -13,6 +13,7 @@ const channelId = process.env.ChannelID;
 
 client.once('ready', () => {
     console.log('Bot is ready');
+    client.user.setActivity({ name: "待機中", type: ActivityType.Custom });
 });
 
 client.login(process.env.TOKEN);
@@ -82,7 +83,17 @@ async function createEmbed(postData) {
     
     embed.setFooter({ text: `イベントID: ${postData.EventId}\n検知ID: ${postData.KyoshinEventId}` });
 
-    return { embeds: [embed]};
+    statusUpdate(postData);
+
+    return { embeds: [embed] };
+}
+    
+async function statusUpdate(postData) {
+    client.user.setActivity({ name: postData.Regions.join(", "), type: ActivityType.Custom });
+    
+    await new Promise(resolve => setTimeout(resolve, 10000));
+    
+    client.user.setActivity({ name: "待機中", type: ActivityType.Custom });
 }
 
 const port = process.env.PORT || 8000;

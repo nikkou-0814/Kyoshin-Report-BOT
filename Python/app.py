@@ -68,6 +68,9 @@ async def create_embed(post_data):
     embed.add_field(name="検知地域", value=", ".join(post_data_dict["Regions"]), inline=True)
     embed.set_footer(text=f"イベントID: {post_data_dict['EventId']}\n検知ID: {post_data_dict["KyoshinEventId"]}")
     await send_to_discord(embed)
+    await client.change_presence(status=discord.Status.online, activity=discord.CustomActivity(name=", ".join(post_data_dict["Regions"])))
+    await asyncio.sleep(10)
+    await client.change_presence(status=discord.Status.online, activity=discord.CustomActivity(name="待機中"))
 
 async def start_server():
     app = web.Application()
@@ -76,6 +79,10 @@ async def start_server():
     await runner.setup()
     site = web.TCPSite(runner, 'localhost', 8000)
     await site.start()
+
+@client.event
+async def on_ready():
+    await client.change_presence(status=discord.Status.online, activity=discord.CustomActivity(name="待機中"))
 
 async def run_bot():
     await client.start(os.getenv('TOKEN'))
