@@ -7,7 +7,7 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "jimp": "^0.22.12",
-    "puppeteer": "^22.11.0",
+    "puppeteer": "^22.15.0",
     "robotjs": "^0.6.0"
   }
 }
