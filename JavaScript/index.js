@@ -19,6 +19,7 @@ let page;
 
 async function initializePuppeteer() {
     try {
+        console.log('強震モニタに接続中...');
         browser = await puppeteer.launch({
             args: ['--no-sandbox', '--disable-setuid-sandbox'],
         });
