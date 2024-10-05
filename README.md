@@ -4,7 +4,7 @@
     <img src="screenshot.png" alt="Kyoshin Report BOT Screenshot" style="max-width: 100%; height: auto;">
 </div>
 ※現在のものではありません
-　
+
 > [!CAUTION]
 > 私は利用規約の怪文書を理解できないので利用規約に違反している可能性があります。
 > もし違反しているようでしたらIssuesなどで優しく注意して上げてください...
