@@ -150,21 +150,16 @@ async function captureScreenshot() {
 
     try {
         if (page) {
-            setTimeout(async () => {
-                try {
-                    await page.screenshot({
-                        path: screenshotPath,
-                        clip: {
-                            x: 5,
-                            y: 130,
-                            width: 360,
-                            height: 477
-                        }
-                    });
-                } catch (error) {
-                    console.error('スクリーンショットの取得中にエラーが発生しました:', error);
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            await page.screenshot({
+                path: screenshotPath,
+                clip: {
+                    x: 5,
+                    y: 130,
+                    width: 360,
+                    height: 477
                 }
-            }, 2000);
+            });
         } else {
             console.error('ページが初期化されていません');
         }
@@ -189,7 +184,6 @@ async function captureScreenshot() {
 
     return attachment;
 }
-
 
 async function statusUpdate(postData) {
     client.user.setActivity({ name: postData.Regions.join(", "), type: ActivityType.Custom });
